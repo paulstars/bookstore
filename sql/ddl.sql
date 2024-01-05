@@ -104,7 +104,7 @@ create table book_checkouts
 	(
 	 book_checkouts_id		SERIAL PRIMARY KEY, 
 	 isbn					varchar(13) NOT NULL,
-	 username				varchar(10) NOT NULL,
+	 username				varchar(30) NOT NULL,
 	 foreign key (isbn) references books (isbn),
 	 foreign key (username) references users (username)
 	);
@@ -120,7 +120,7 @@ create table user_orders
 	 order_year						numeric(4,0),
 	 total_paid 					decimal(7,2) NOT NULL, /*total paid on this order, we must keep this in case the price of a book changes after this order is created*/
 	 tracking_status				varchar(25) NOT NULL, /*orders tracking status */
-	 username						varchar(10) NOT NULL,
+	 username						varchar(30) NOT NULL,
 	 foreign key (username) references users (username)
 	);
 
